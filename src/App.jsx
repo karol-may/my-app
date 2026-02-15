@@ -2,7 +2,10 @@ import { useState } from 'react';
 import { QRCodeSVG } from 'qrcode.react';
 import './App.css'
 
-const APP_URL = process.env.VERCEL_URL ?? "http://localhost:5173";
+const APP_URL =
+  import.meta.env.VITE_APP_URL ??
+  import.meta.env.VITE_VERCEL_URL ??
+  "http://localhost:5173";
 
 function LoginForm({buttonOnClickHandler}){
   return(
