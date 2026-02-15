@@ -33,7 +33,7 @@ function App() {
       <>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path={"https://"+APP_URL+"/hello/:email"} element={<HelloPage/>} />
+          <Route path={"/hello/:email"} element={<HelloPage/>} />
         </Routes>
       </>
     );
@@ -52,7 +52,7 @@ function Home() {
 
       { user &&
           <>
-            <QRCodeSVG value={APP_URL+"/hello/"+user}></QRCodeSVG>
+            <QRCodeSVG value={"https://"+APP_URL+"/hello/"+user}></QRCodeSVG>
           </>
       }
 
