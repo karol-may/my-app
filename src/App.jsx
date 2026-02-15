@@ -6,7 +6,7 @@ import HelloPage from './test/Page';
 
 const APP_URL =
   import.meta.env.VITE_APP_URL ??
-  import.meta.env.VERCEL_PROJECT_PRODUCTION_URL ??
+  import.meta.env.VITE_VERCEL_PROJECT_PRODUCTION_URL ??
   "localhost:5173";
 
 function LoginForm({buttonOnClickHandler}){
