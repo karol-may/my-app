@@ -1,9 +1,8 @@
 import { useState } from 'react';
-import env from 'react-dotenv';
 import { QRCodeSVG } from 'qrcode.react';
 import './App.css'
 
-const APP_URL = env?.APP_URL ?? "http://localhost:5173";
+const APP_URL = process.env.VERCEL_URL ?? "http://localhost:5173";
 
 function LoginForm({buttonOnClickHandler}){
   return(
