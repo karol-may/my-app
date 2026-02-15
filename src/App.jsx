@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { QRCodeSVG } from 'qrcode.react';
 import './App.css'
+import { Routes, Route, Link } from "react-router-dom";
+import HelloPage from './test/Page';
 
 const APP_URL =
   import.meta.env.VITE_APP_URL ??
@@ -26,9 +28,18 @@ function LoginForm({buttonOnClickHandler}){
   )
 }
 
-
-
 function App() {
+    return (
+      <>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/hello/:email" element={<HelloPage/>} />
+        </Routes>
+      </>
+    );
+}
+
+function Home() {
   const [user, setUser] = useState(null);
 
   function buttonOnClickHandler(e){
@@ -37,10 +48,11 @@ function App() {
 
   return (
     <>
+      <Link to={"/test"}> test </Link>
+
       { user &&
           <>
-            Hi {user}, All let's get know each other!
-            <QRCodeSVG value={APP_URL+"/"+user}></QRCodeSVG>
+            <QRCodeSVG value={APP_URL+"/hello/"+user}></QRCodeSVG>
           </>
       }
 

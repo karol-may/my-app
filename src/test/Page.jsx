@@ -1,8 +1,13 @@
-function Page() {
+import { useParams } from "react-router-dom";
+
+function HelloPage() {
+
+    let email = useParams("email");
+
     return (
         <>
-        jkhjhfdg
+        Cześć, {email}!
         </>
     )
 }
-export default Page;
+export default HelloPage;
