@@ -5,8 +5,8 @@ import { Routes, Route, Link } from "react-router-dom";
 import HelloPage from './test/Page';
 
 const APP_URL =
-  import.meta.env.VITE_APP_URL ??
-  import.meta.env.VITE_VERCEL_URL ??
+  "https://" +import.meta.env.VITE_APP_URL ??
+  "https://" +import.meta.env.VITE_VERCEL_URL ??
   "http://localhost:5173";
 
 function LoginForm({buttonOnClickHandler}){
