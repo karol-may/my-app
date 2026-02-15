@@ -2,8 +2,7 @@ import { useParams } from "react-router-dom";
 
 function HelloPage() {
 
-    let email = useParams("email");
-
+    const { email } = useParams();
     return (
         <>
         Cześć, {email}!
