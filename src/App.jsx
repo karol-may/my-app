@@ -52,7 +52,7 @@ function Home() {
 
       { user &&
           <>
-            <QRCodeSVG value={"https://"+APP_URL+"/hello/"+user}></QRCodeSVG>
+            <QRCodeSVG value={"https://"+APP_URL+"/hello/kjhgfd"}></QRCodeSVG>
           </>
       }
 
