@@ -5,9 +5,9 @@ import { Routes, Route, Link } from "react-router-dom";
 import HelloPage from './test/Page';
 
 const APP_URL =
-  "https://" +import.meta.env.VITE_APP_URL ??
-  "https://" +import.meta.env.VITE_VERCEL_URL ??
-  "http://localhost:5173";
+  import.meta.env.VITE_APP_URL ??
+  import.meta.env.VITE_VERCEL_URL ??
+  "localhost:5173";
 
 function LoginForm({buttonOnClickHandler}){
   return(
@@ -33,7 +33,7 @@ function App() {
       <>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/hello/:email" element={<HelloPage/>} />
+          <Route path={"https://"+APP_URL+"/hello/:email"} element={<HelloPage/>} />
         </Routes>
       </>
     );
